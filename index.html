@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/myweb/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue</title>
+    <script>
+      (function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt =
+              'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              // var clientWidth = docEl.clientWidth
+              // if (!clientWidth) return
+              var clientWidth = docEl.clientWidth
+              if (!clientWidth) return
+              if (clientWidth <= 750) {
+                docEl.style.cssText =
+                  'font-size:' + 100 * (clientWidth / 750) + 'px !important'
+              } else if (clientWidth <= 1200 && clientWidth > 750) {
+                docEl.style.cssText =
+                  'font-size:' + 100 * (clientWidth / 1200) + 'px !important'
+              } else {
+                docEl.style.cssText =
+                  'font-size:' + 100 * (clientWidth / 1366) + 'px !important'
+                if (100 * (clientWidth / 1366) >= 100) {
+                  docEl.style.cssText = 'font-size:' + 100 + 'px !important'
+                }
+              }
+            }
+          window.onresize = function () {
+            recalc()
+          }
+          window.onload = function () {
+            recalc()
+          }
+          recalc()
+        })(document, window)
+    </script>
+    <script type="module" crossorigin src="/myweb/assets/index-DsD1fbfH.js"></script>
+    <link rel="stylesheet" crossorigin href="/myweb/assets/index-CnfnVqc_.css">
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+</html>
